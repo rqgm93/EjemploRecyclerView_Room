@@ -7,8 +7,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private DigimonAdapter adapter;
+    private ArrayList<Digimon> digimonList;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +28,18 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        recyclerView = findViewById(R.id.recyclerViewDigimon);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        digimonList = new ArrayList<>();
+
+        digimonList.add(new Digimon("Agumon", "Reptil", "Infantil"));
+        digimonList.add(new Digimon("Gatomon", "Bestia Sagrada", "Adulto"));
+
+        adapter = new DigimonAdapter(digimonList);
+        recyclerView.setAdapter(adapter);
+
     }
 }
