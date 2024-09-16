@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EjemploRecyclerView</string>
+    <string name="add_digimon">Añadir digimon</string>
+    <string name="digimon_type">Tipo (Acuático, Ave, etc.)</string>
 </resources>
