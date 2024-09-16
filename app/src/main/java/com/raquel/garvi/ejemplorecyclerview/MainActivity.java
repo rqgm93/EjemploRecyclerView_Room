@@ -32,14 +32,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerViewDigimon);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
         digimonList = new ArrayList<>();
-
+        // Agregar algunos Digimon de ejemplo
         digimonList.add(new Digimon("Agumon", "Reptil", "Infantil"));
         digimonList.add(new Digimon("Gatomon", "Bestia Sagrada", "Adulto"));
 
         adapter = new DigimonAdapter(digimonList);
         recyclerView.setAdapter(adapter);
-
     }
 }
