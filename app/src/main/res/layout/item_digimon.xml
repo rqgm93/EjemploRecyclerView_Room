@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nombre"
+            android:fontFamily="@font/assistant_font"
             android:textSize="18sp"
             android:textStyle="bold" />
 

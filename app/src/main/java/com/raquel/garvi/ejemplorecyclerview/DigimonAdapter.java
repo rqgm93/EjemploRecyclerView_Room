@@ -10,12 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DigimonAdapter extends RecyclerView.Adapter<DigimonAdapter.DigimonViewHolder> {
 
-    private ArrayList<Digimon> digimonList;
+    private List<Digimon> digimonList;
 
-    public DigimonAdapter(ArrayList<Digimon> digimonList) {
+    public DigimonAdapter(List<Digimon> digimonList) {
         this.digimonList = digimonList;
     }
 

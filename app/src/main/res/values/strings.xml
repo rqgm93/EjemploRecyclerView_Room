@@ -2,4 +2,7 @@
     <string name="app_name">EjemploRecyclerView</string>
     <string name="add_digimon">Añadir digimon</string>
     <string name="digimon_type">Tipo (Acuático, Ave, etc.)</string>
+    <string name="digimon_name">Nombre del Digimon</string>
+    <string name="digimon_type2">Tipo del Digimon</string>
+    <string name="digimon_level">Nivel del Digimon</string>
 </resources>

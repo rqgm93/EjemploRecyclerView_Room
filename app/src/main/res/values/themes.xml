@@ -1,8 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.EjemploRecyclerView" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary brand color. -->
+        <!-- Color para la barra de aplicaciones y otros elementos primarios de
+        la interfaz de usuario.-->
+        <item name="colorPrimary">@color/red_500</item>
+        <!-- Una variante más oscura del color primario, utilizada para la barra de
+        estado (en Android 5.0+) y las barras contextuales de las aplicaciones. -->
+        <item name="colorPrimaryDark">@color/red_700</item>
+
+        <item name="colorOnPrimary">@color/white</item>
+
     </style>
 
     <style name="Theme.EjemploRecyclerView" parent="Base.Theme.EjemploRecyclerView" />
