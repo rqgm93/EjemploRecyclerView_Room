@@ -10,10 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.raquel.garvi.ejemplorecyclerview.room.DatabaseClient;
+import com.raquel.garvi.ejemplorecyclerview.room.DigimonDao;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,13 +37,15 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-
         recyclerView = findViewById(R.id.recyclerViewDigimon);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
         // Cargar los Digimons y mostrarlos
         loadDigimons();
+
+        // Configurar el ItemTouchHelper para manejar los gestos de deslizamiento
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new SwipeToDeleteCallback(digimonAdapter));
+        itemTouchHelper.attachToRecyclerView(recyclerView);
 
         // añadir digimon
         add_digimon = findViewById(R.id.add_digimon);
@@ -55,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadDigimons() {
         digimonList = DatabaseClient.getInstance(getApplicationContext()).getDigimonDatabase().digimonDao().getAllDigimons();
-        digimonAdapter = new DigimonAdapter(digimonList);
+        DigimonDao digimonDao = DatabaseClient.getInstance(getApplicationContext()).getDigimonDatabase().digimonDao();
+        digimonAdapter = new DigimonAdapter(digimonList, digimonDao, getApplicationContext());
         recyclerView.setAdapter(digimonAdapter);
     }
 

@@ -9,51 +9,66 @@
 
     <ImageButton
         android:id="@+id/return_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/red_500"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/background_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="8dp"
+        android:autofillHints="@string/digimon_name"
+        android:hint="@string/digimon_name"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/return_main">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="@string/digimon_name"
-            android:hint="@string/digimon_name"
-            android:inputType="text" />
+    <EditText
+        android:id="@+id/editTextType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:autofillHints="Tipo del Digimon"
+        android:hint="@string/digimon_type2"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLevel" />
 
-        <EditText
-            android:id="@+id/editTextType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="Tipo del Digimon"
-            android:hint="@string/digimon_type2"
-            android:inputType="text" />
+    <EditText
+        android:id="@+id/editTextLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:autofillHints="Nivel del Digimon"
+        android:hint="@string/digimon_level"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
-        <EditText
-            android:id="@+id/editTextLevel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="Nivel del Digimon"
-            android:hint="@string/digimon_level"
-            android:inputType="text" />
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/add_digimon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextType" />
 
-        <Button
-            android:id="@+id/buttonSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_digimon" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
